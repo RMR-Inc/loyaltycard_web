@@ -2,7 +2,6 @@ name: Report a Bug
 description: Help our dev team fix bugs
 title: "BUG: "
 labels: ["\U0001FAB2 Bug, \U0001F310 Web App"]
-assignees:
 body:
   - type: textarea
     id: bug-desc

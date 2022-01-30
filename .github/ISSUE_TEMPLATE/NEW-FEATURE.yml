@@ -2,7 +2,6 @@ name: Create a new feature
 description: Describe a new feature to everyone
 title: "FEATURE: "
 labels: ["📝 Functionnality, \U0001F310 Web App"]
-assignees:
 body:
   - type: textarea
     id: feature-desc
