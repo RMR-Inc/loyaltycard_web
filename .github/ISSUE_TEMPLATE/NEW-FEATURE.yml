@@ -11,3 +11,7 @@ body:
       placeholder: Write here !
     validations:
       required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Don't forget to add this issue to the "LoyaltyCard PA" project

@@ -9,11 +9,11 @@ body:
       label: Bug Description
       description: What happened ?
       placeholder: Tell us what you see and step to reproduce !
-      value: "Here my bug description....
-      
-      - Step 1 to reproduce
-      - Step 2 to reproduce
-      - Step 3 to reproduce
+      value: "Here my bug description.... \
+      \
+      - Step 1 to reproduce \
+      - Step 2 to reproduce \
+      - Step 3 to reproduce \
       - ..."
     validations:
       required: true
@@ -34,3 +34,7 @@ body:
       label: Relevant log output
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
+  - type: markdown
+    attributes:
+      value: |
+        ## Don't forget to add this issue to the "Bugs" project
