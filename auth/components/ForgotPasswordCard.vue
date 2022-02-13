@@ -13,7 +13,7 @@
         <div class="right-align">
             <a @click="submitForm" class="btn inverted spc-btwn">
                 Confirmer
-                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-line-light.svg" alt="Connexion icon" class="icn">
+                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-light-line.svg" alt="Connexion icon" class="icn">
             </a>
         </div>
     </div>
@@ -43,7 +43,7 @@
             },
             checkEmail(e){
                 this.emailIncorrect = null;
-                
+
                 if(this.form.email.length == 0) return;
 
                 if(!this.form.email.match(this.emailRegex)) this.emailIncorrect = "Bad email address !";
