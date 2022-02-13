@@ -1,0 +1,17 @@
+name: Create a new feature
+description: Describe a new feature to everyone
+title: "FEATURE: "
+labels: ["📝 Functionnality, \U0001F310 Web App"]
+body:
+  - type: textarea
+    id: feature-desc
+    attributes:
+      label: Feature Description
+      description: What do you add ?
+      placeholder: Write here !
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## Don't forget to add this issue to the "LoyaltyCard" project

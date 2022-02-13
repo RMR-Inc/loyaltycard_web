@@ -1,0 +1,42 @@
+name: 🚀 Deploy website
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  workflow_dispatch:
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v2
+
+    - name: 🚚 Use Node.js 16
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+      
+    - name: 🔨 Build Project
+      run: |
+        cd main
+        npm install
+        npm run build
+      
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.1.0
+      with:
+        server: loyaltycard.tech
+        username: github
+        password: ${{ secrets.SSH_GITHUB_PASSWORD }}
+        server-dir: /web/www/main/
+        local-dir: ./main/
+        
+    - name: 🎉 Starting app
+      run: |
+        cd main
+        npm run start
