@@ -1,0 +1,41 @@
+# This is a basic workflow to help you get started with Actions
+
+name: SFTP Remote Deployement
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  deploy_job:
+    runs-on: ubuntu-latest
+    name: Starting Deploy
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: Deploy files
+        uses: LubricantJam/SFTP-Deploy-Action@v2.1
+        with:
+          username: github
+          server: loyaltycard.tech
+          port: 22
+          ssh_password: ${{ secrets.SSH_GITHUB_PASSWORD }}
+          
+          local_path: './*'
+          remote_path: '/web/www'
+          
+          args: '-o ConnectTimeout=5'
+          
+      - run: cd main
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Launch app
+        run: npm run production
