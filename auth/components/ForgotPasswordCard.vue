@@ -1,10 +1,10 @@
 <template>
-    <div class="login-card">
+    <div class="card">
         <h3>Lost it ?</h3>
         <h5>Redefine your password</h5>
-        <div class="login-ipt">
-            <input type="email" id="email" placeholder="Email address" required v-model="form.email" @input="checkEmail" @focusout="checkRequired">
-            <span class="error-msg" v-if="emailIncorrect">{{emailIncorrect}}</span>
+        <div class="ipt">
+            <input type="email" id="email" placeholder="Email address" required v-model="form.email.content" @input="checkEmail" @focusout="checkRequired">
+            <span class="error-msg" v-if="form.email.error">{{form.email.error}}</span>
         </div>
         <div class="bottom-form">
             <span><nuxt-link to="/login">Finally remember it ?</nuxt-link></span>
@@ -13,7 +13,7 @@
         <div class="right-align">
             <a @click="submitForm" class="btn inverted spc-btwn">
                 Confirmer
-                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-light-line.svg" alt="Connexion icon" class="icn">
+                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-light-line.svg" alt="Confirm icon" class="icn">
             </a>
         </div>
     </div>
@@ -23,40 +23,36 @@
     export default {
         data: () => ({
             form: {
-                email: "",
+                email: {
+                    content: "",
+                    error: null,
+                },
             },
-            emailIncorrect: null,
             emailRegex: /^[a-zA-Z_.0-9+\-*=]+@[a-z0-9_]+?\.[a-z0-9]{2,3}$/,
         }),
 
         methods: {
             checkRequired(e) {
                 if(e.target.value.trim().length == 0){
-                    switch(e.target.id){
-                        case 'email':
-                            this.emailIncorrect = "Required !";
-                            break;
-                        default:
-                            break;
-                    }
+                    if(this.form[e.target.id]) this.form[e.target.id].error = "Required !";
                 }
             },
             checkEmail(e){
-                this.emailIncorrect = null;
+                this.form.email.error = null;
 
-                if(this.form.email.length == 0) return;
+                if(this.form.email.content.length == 0) return;
 
-                if(!this.form.email.match(this.emailRegex)) this.emailIncorrect = "Bad email address !";
+                if(!this.form.email.content.match(this.emailRegex)) this.form.email.error = "Bad email address !";
             },
             submitForm(e){
-                if(this.emailIncorrect) return;
+                for(let c in this.form) if(this.form[c].error) return;
             },
         },
     }
 </script>
 
 <style lang="css" scoped>
-    .login-card {
+    .card {
         display: flex;
         flex-direction: column;
         width: 300px;
@@ -69,18 +65,18 @@
         background-position: center;
     }
 
-    .login-card > h5 {
+    .card > h5 {
         margin-bottom: 48px;
     }
 
-    .login-ipt {
+    .ipt {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 8px 0;
     }
 
-    .login-ipt .error-msg {
+    .ipt .error-msg {
         font-style: italic;
         color: var(--invalid-color);
         margin: 6px 0 0;

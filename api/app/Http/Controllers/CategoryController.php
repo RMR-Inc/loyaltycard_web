@@ -30,7 +30,7 @@ class CategoryController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:100|min:3',
@@ -78,7 +78,7 @@ class CategoryController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         if($category->delete()) return $this->respondSuccessfully('Category destroyed !');
     }
 
@@ -104,6 +104,6 @@ class CategoryController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }

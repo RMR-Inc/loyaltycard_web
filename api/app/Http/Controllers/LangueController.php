@@ -79,7 +79,7 @@ class LangueController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         if($langue->delete()) return $this->respondSuccessfully('Langue destroyed !');
     }
 
@@ -105,6 +105,6 @@ class LangueController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }
