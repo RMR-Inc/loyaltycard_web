@@ -144,14 +144,12 @@
                     email: this.form.email.content,
                     password: this.form.password.content,
                 }).then(res => {
-                    console.log(res)
                     if(!res.data.success){
                         let notification = { type: 'error', content: 'Invalid fields ! Email maybe already assign to an account', displayTime: 5000 };
                         this.$store.dispatch('notifications/add', notification);
                         this.req.status = "error";
 
                         setTimeout(() => { this.req.status = null; }, 1000);
-
                         return;
                     }
 
