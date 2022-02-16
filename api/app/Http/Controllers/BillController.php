@@ -94,7 +94,7 @@ class BillController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         if($bill->delete()) return $this->respondSuccessfully('Bill destroyed !');
     }
 
@@ -120,6 +120,6 @@ class BillController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }

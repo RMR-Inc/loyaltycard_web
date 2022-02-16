@@ -1,17 +1,19 @@
 <template>
     <div class="corp-card">
         <h5>Add new Companie</h5>
-            <div class="corp-ipt">
-                <input type="text" class="input" name="corp-name" id="corp-name" placeholder="Corporation name" required v-model="form.name" @focusout="checkRequired" />
+            <div class="ipt">
+                <input type="text" id="name" placeholder="Corporation name" required @focusout="checkRequired" />
+                <span class="error-msg" v-if="form.name.error">{{form.name.error}}</span>
             </div>
-            <div class="corp-ipt">
-                <input type="text" class="input" name="corp-email" id="corp-email" placeholder="Email address" required v-model="form.email" @input="checkEmail" @focusout="checkRequired" />
-                <span class="error-msg" v-if="emailIncorrect">{{emailIncorrect}}</span>
+            <div class="ipt">
+                <input type="email" id="email" placeholder="Email address" required v-model="form.email.content" @input="checkEmail" @focusout="checkRequired" />
+                <span class="error-msg" v-if="form.email.error">{{form.email.error}}</span>
             </div>
-            <div class="corp-ipt">
-                <input type="tel" class="input" name="corp-tel" id="corp-tel" placeholder="Phone number" required v-model="form.name" @focusout="checkRequired" />
+            <div class="ipt">
+                <input type="tel" id="phone" placeholder="Phone number" required v-model="form.phone.content" @input="checkPhone" @focusout="checkRequired" />
+                <span class="error-msg" v-if="form.phone.error">{{form.phone.error}}</span>
             </div>    
-            <div class="corp-ipt preview">
+            <div class="ipt preview">
                 <h6>Preview :</h6>
                 <img v-if="url" :src="url" />
             </div>
@@ -33,47 +35,55 @@
     export default {
         data: () => ({
             form: {
-                name: "",
-                email: "",
-                phone: true,
+                name: {
+                    content: "",
+                    error: null,
+                },
+                email: {
+                    content: "",
+                    error: null,
+                },
+                phone: {
+                    content: "",
+                    error: null,
+                },
             },
-            nameIncorrect: null,
-            emailIncorrect: null,
-            phoneIncorrect: null,
-            emailRegex: /^[a-zA-Z_.0-9+\-*=]+@[a-z0-9_]+?\.[a-z0-9]{2,3}$/,
             url: null,
+            req: {
+                status: "",
+            },
+            emailRegex: /^[a-zA-Z_.0-9+\-*=]+@[a-z0-9_]+?\.[a-z0-9]{2,3}$/,
+            phoneRegex: /\+(9[976]\d|8[987530]\d|6[987]\d|5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|4[987654310]|3[9643210]|2[70]|7|1)\d{3,14}$/,
         }),
-        
+
         methods: {
             checkRequired(e) {
                 if(e.target.value.trim().length == 0){
-                    switch(e.target.id){
-                        case 'email':
-                            this.emailIncorrect = "Required !";
-                            break;
-                        case 'name':
-                            this.passwordIncorrect = "Required !";
-                            break;
-                        case 'phone':
-                            this.phoneIncorrect = "Required !";
-                        break;
-                        default:
-                            break;
-                    }
+                    if(this.form[e.target.id]) this.form[e.target.id].error = "Required !";
                 }
             },
             checkEmail(e){
-                this.emailIncorrect = null;
-                
-                if(this.form.email.length == 0) return;
+                this.form.email.error = null;
 
-                if(!this.form.email.match(this.emailRegex)) this.emailIncorrect = "Bad email address !";
+                if(this.form.email.content.length == 0) return;
+
+                if(!this.form.email.content.match(this.emailRegex)) this.form.email.error = "Bad email address !";
             },
-            onFileChange(e) {
-            const file = e.target.files[0];
-            this.url = URL.createObjectURL(file);
+
+            checkPhone(e){
+                this.form.phone.error = null;
+
+                if(this.form.phone.content.length == 0) return;
+
+                if(!this.form.phone.content.match(this.phoneRegex)) this.form.phone.error = "Bad phone format !";
+            },
+
+             onFileChange(e) {
+                const file = e.target.files[0];
+                
+                this.url = URL.createObjectURL(file);
             }
-        }
+        },
     }
 </script>
 
@@ -95,18 +105,26 @@
         margin-bottom: 48px;
     }
 
-    .corp-ipt {
+    .ipt {
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 8px 0;
     }
 
-    .corp-ipt .error-msg {
+    .ipt .error-msg {
         font-style: italic;
         color: var(--invalid-color);
         margin: 6px 0 0;
         width: 90%;
+    }
+
+    .preview {
+        margin-bottom: 20px;
+    }
+
+    .preview h6 {
+        margin-bottom: 10px;
     }
 
     .preview img {
