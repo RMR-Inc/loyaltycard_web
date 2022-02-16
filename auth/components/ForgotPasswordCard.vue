@@ -13,7 +13,7 @@
         <div class="right-align">
             <a @click="submitForm" class="btn inverted spc-btwn">
                 Confirmer
-                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-line-light.svg" alt="Connexion icon" class="icn">
+                <img src="https://cdn.loyaltycard.tech/icons/System/arrow-right-circle-light-line.svg" alt="Connexion icon" class="icn">
             </a>
         </div>
     </div>

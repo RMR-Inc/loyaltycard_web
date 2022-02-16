@@ -1,5 +1,7 @@
 <template>
     <div>
+        <Banner/>
+        <SideBar/>
         <Nuxt/>
     </div>
 </template>
