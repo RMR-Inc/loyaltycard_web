@@ -402,7 +402,7 @@ input {
 textarea {
 	min-width: 256px;
 	min-height: 128px;
-	padding: 16px 16px;
+	padding: 16px;
 }
 
 input:disabled,
