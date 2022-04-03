@@ -14,10 +14,10 @@
 <style scoped>
     .ctnr{
         max-width: 60rem;
-        min-height: calc(100vh - 96px);
+        min-height: 100vh;
         margin: 0 auto;
         padding: 3rem;
-        background: #fff;
+        background: white;
         font-family: "Open Sans";  
     }
 </style>

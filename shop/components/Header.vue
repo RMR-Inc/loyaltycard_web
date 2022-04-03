@@ -3,10 +3,10 @@
 			<div class="menu">
 				<div class="cat-title">Choose a Category</div>
 				<div class="cat">
-					<h3>Books</h3>
+					<p>Books</p>
 					<div>
-						<h4>Books</h4>
-						<h5>Language</h5>
+						<h5>Books</h5>
+						<h6>Language</h6>
 						<ul>
 							<li><a href="#">English</a></li>
 							<li><a href="#">Dutch</a></li>
@@ -19,45 +19,45 @@
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Computer & Electronics</h3>
+					<p>Computer & Electronics</p>
 					<div>
-						<h4>Smartphones</h4>
+						<h5>Smartphones</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Toys</h3>
+					<p>Toys</p>
 					<div>
-						<h4>Brands</h4>
+						<h5>Brands</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Sport & Leisure</h3>
+					<p>Sport & Leisure</p>
 					<div>
-						<h4>Sport</h4>
+						<h5>Sport</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Home & Cooking</h3>
+					<p>Home & Cooking</p>
 					<div>
-						<h4>Cooking</h4>
+						<h5>Cooking</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Garden & DIY</h3>
+					<p>Garden & DIY</p>
 					<div>
-						<h4>Garden</h4>
+						<h5>Garden</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Gifts</h3>
+					<p>Gifts</p>
 					<div>
-						<h4>Gifts</h4>
+						<h5>Gifts</h5>
 					</div>
 				</div>
 				<div class="cat">
-					<h3>Specials</h3>
+					<p>Specials</p>
 					<div>
-						<h4>Specials</h4>
+						<h5>Specials</h5>
 					</div>
 				</div>
 			</div>
@@ -76,53 +76,38 @@
     }
 </script>
 
-<style lang="css" scoped>
+<style lang="css">
     * {
         box-sizing: border-box;
     }
 
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style-type: none;
-    }
-
     a {
-    display: block;
-    padding: 0.2rem 0;
-    color: #000;
-    font-size: 0.875rem;
-    text-decoration: none;
+        display: block;
+        padding: 0.2rem 0;
+        color: var(--black-color);
+        font-size: 0.875rem;
+        text-decoration: none;
     }
     a:hover {
-    color: #51b5d6;
-    text-decoration: underline;
-    }
-
-    h4 {
-    margin: 0.5rem 0 0.75rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid #ddd;
-    font-size: 1.25rem;
-    font-weight: normal;
+        color: var(--celadon-blue);
+        text-decoration: underline;
     }
 
     h5 {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
+        margin: 0.5rem 0 0.75rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--manatee);
     }
-
-    nav::after {
-    content: "";
-    display: block;
-    clear: both;
+    
+    h6 {
+        margin: 0;
+        margin-bottom: 0.5rem;
     }
 
     .menu {
         display: inline-block;
         border-radius: 0.2rem;
-        background: #fff;
+        background: white;
         position: relative;
         z-index: 2;
     }
@@ -137,11 +122,11 @@
         border-color: transparent;
         border-bottom: none;
         border-radius: 0.2rem 0.2rem 0 0;
-        background-color: #eee;
+        background-color: var(--cultured);
         box-shadow: none;
         position: relative;
         z-index: 1;
-        color: #444;
+        color: var(--black-color);
         cursor: default;
     }
     .menu:hover > .cat-title::after {
@@ -158,16 +143,16 @@
         display: none;
         width: 12rem;
         margin: 0;
-        border-right: 1px solid #bbb;
+        border-right: 1px solid var(--grey-color);
     }
     .menu > .cat-title {
         display: block;
         padding: 0.65rem;
-        border: 1px solid #bbb;
+        border: 1px solid var(--grey-color);
         border-radius: 0.2rem;
-        background: #fff;
+        background: white;
         box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
-        color: #51b5d6;
+        color: var(--celadon-blue);
         font-weight: bold;
         font-size: 0.875rem;
         cursor: pointer;
@@ -181,41 +166,31 @@
         width: calc(960px - 6rem);
         border-right: none;
     }
-    /* .menu > .cat:hover::before {
-        content: "";
-        display: block;
-        width: 12rem;
-        height: 3rem;
-        border: 1px solid transparent;
-        position: absolute;
-        top: 0;
-        z-index: 10;
-    } */
-
-    .cat h3 {
+    
+    .cat p {
         width: 12rem;
         margin: 0;
         padding: 0.65rem 0.75rem;
         border: 1px solid transparent;
         border-width: 1px 0;
-        background: #fff;
+        background: white;
         position: relative;
         z-index: 10;
         font-size: 0.875rem;
         font-weight: normal;
         cursor: default;
     }
-    .cat:last-child h3 {
+    .cat:last-child p {
         border-radius: 0 0 0.2rem 0.2rem;
-        color: darkred;
+        color: var(--imperial-red);
     }
-    .cat:last-child:hover h3 {
+    .cat:last-child:hover p {
         border-bottom-color: transparent;
         border-radius: 0 0 0 0.2rem;
     }
-    .cat:hover h3 {
+    .cat:hover p {
         width: calc(12rem + 1px);
-        border-color: #bbb;
+        border-color: var(--grey-color);
     }
     .cat:hover div {
         display: block;
@@ -224,9 +199,9 @@
         display: none;
         width: calc(960px - 6rem - 12rem);
         padding: 1rem 1.2rem;
-        border-left: 1px solid #bbb;
+        border-left: 1px solid var(--grey-color);
         border-radius: 0 0.2rem 0.2rem 0;
-        background: #fff;
+        background: white;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -264,14 +239,14 @@
         height: 15rem;
         margin-top: 2rem;
         padding: 1rem;
-        background: #ccc;
+        background: var(--grey-color);
         position: relative;
         z-index: 1;
         clear: both;
     }
     .main p {
         margin: auto;
-        color: #555;
+        color: var(--grey-color);
         text-transform: uppercase;
         letter-spacing: 1px;
     }
