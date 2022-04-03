@@ -18,6 +18,5 @@
         margin: 0 auto;
         padding: 3rem;
         background: white;
-        font-family: "Open Sans";  
     }
 </style>
