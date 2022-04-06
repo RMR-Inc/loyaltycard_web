@@ -83,14 +83,11 @@
 
     a {
         display: block;
-        padding: 0.2rem 0;
         color: var(--black-color);
-        font-size: 0.875rem;
         text-decoration: none;
     }
     a:hover {
         color: var(--celadon-blue);
-        text-decoration: underline;
     }
 
     h5 {
