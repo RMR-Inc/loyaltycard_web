@@ -16,9 +16,9 @@
 <style scoped>
     .banner {
         display: flex;
-        min-height: 15rem;
-        margin: 2rem 0;
-        padding: 1rem;
+        min-height: 240px;
+        margin: 32px 0;
+        padding: 16px;
         background: var(--cultured);
         position: relative;
         z-index: 1;

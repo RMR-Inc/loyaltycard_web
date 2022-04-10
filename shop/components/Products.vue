@@ -9,7 +9,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -21,7 +21,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -33,7 +33,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -45,7 +45,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -57,7 +57,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -69,7 +69,7 @@
            <div class="bottom">
                <div class="title-price">
                    <h6>Product</h6>
-                   <p>119,99 €</p>
+                   <span>119,99 €</span>
                </div>
                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium dolor iure commodi dolorem maxime!</p>
            </div>
@@ -92,10 +92,13 @@
     }
 
     .product {
-        margin: 2rem 1rem;
-        border-radius: 10px;
+        margin: 32px 16px;
+        border-radius: 6px;
         overflow: hidden;
         background: var(--white-color);
+    }
+    .product:hover {
+        color: var(--celadon-blue);
     }
     .product .top img {
         object-fit: cover;
