@@ -1,11 +1,13 @@
 <template>
     <div>
-
+        <ThreeScene/>
     </div>
 </template>
 
-<script>
-    export default {
+<style lang='css' scoped>
 
-    }
+</style>
+
+<script>
+
 </script>
