@@ -4,7 +4,7 @@
 
 <script>
     import * as THREE from 'three/build/three.cjs'
-    
+
 export default {
   data() {
     return {
@@ -56,7 +56,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
-    #three {
-        height: 500px;
+  #three {
+      width: 100%;
+      height: 500px;
     }
 </style>

@@ -53,6 +53,8 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
 
+    transpile: ["three"],
+
     // PWA module configuration: https://go.nuxtjs.dev/pwa
     pwa: {
         manifest: {

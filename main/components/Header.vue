@@ -2,7 +2,7 @@
     	<header>
 			<LCLogo/>
             <nav>
-                <a href="">À propos de nous</a>
+                <a href="">Qui sommes-nous ?</a>
                 <a href="">Contact</a>
                 <a href="">Shop</a>
                 <a class="btn" href="">Se connecter</a>
@@ -18,7 +18,6 @@
 
 <style lang="css" scoped>
    header {
-       background: rebeccapurple;
        position: relative;
        height: 75px;
        display: flex;
