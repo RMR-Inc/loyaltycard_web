@@ -38,11 +38,11 @@
 
           window.addEventListener('resize', this.onWindowResize);
 
-          // let geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
-          // let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+          let geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+          let material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
 
-          // this.mesh = new THREE.Mesh( geometry, material );
-          // this.scene.add(this.mesh);
+          this.mesh = new THREE.Mesh( geometry, material );
+          this.scene.add(this.mesh);
 
           const loader = new GLTFLoader();
 
