@@ -104,6 +104,6 @@ class SubEnterpriseClientController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }

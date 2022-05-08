@@ -83,7 +83,7 @@ class DepartmentController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         if($department->delete()) return $this->respondSuccessfully('Department destroyed !');
     }
 
@@ -109,6 +109,6 @@ class DepartmentController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }

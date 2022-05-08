@@ -55,6 +55,7 @@ export default {
 
     transpile: ["three"],
 
+
     // PWA module configuration: https://go.nuxtjs.dev/pwa
     pwa: {
         manifest: {

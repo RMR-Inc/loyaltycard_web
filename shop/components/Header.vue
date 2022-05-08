@@ -65,7 +65,7 @@
 				<a href="#">Good deals</a>
 				<a href="#">Trends</a>
 				<a href="#">Specials</a>
-				<a href="#">Cart (0)</a>
+				<a href="./cart">Cart <span>(0)</span></a>
 			</div>
 		</header>
 </template>
@@ -83,36 +83,33 @@
 
     a {
         display: block;
-        padding: 0.2rem 0;
         color: var(--black-color);
-        font-size: 0.875rem;
         text-decoration: none;
     }
-    a:hover {
+    header a:hover {
         color: var(--celadon-blue);
-        text-decoration: underline;
     }
 
     h5 {
-        margin: 0.5rem 0 0.75rem;
-        padding-bottom: 0.5rem;
+        margin: 8px 0 12px;
+        padding-bottom: 8px;
         border-bottom: 1px solid var(--manatee);
     }
     
     h6 {
         margin: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 8px;
     }
 
     .menu {
         display: inline-block;
-        border-radius: 0.2rem;
+        border-radius: 3px;
         background: white;
         position: relative;
         z-index: 2;
     }
     .menu:hover {
-        box-shadow: 0 0 0.35rem 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
         position: absolute;
     }
     .menu:hover > .cat {
@@ -121,7 +118,7 @@
     .menu:hover > .cat-title {
         border-color: transparent;
         border-bottom: none;
-        border-radius: 0.2rem 0.2rem 0 0;
+        border-radius: 3px 3px 0 0;
         background-color: var(--cultured);
         box-shadow: none;
         position: relative;
@@ -133,7 +130,7 @@
         content: "⬇️";
     }
     .menu:hover > .cat:last-child {
-        border-radius: 0 0 0.2rem 0.2rem;
+        border-radius: 0 0 3px 3px;
     }
     .menu:hover + .nav::after {
         display: block;
@@ -141,55 +138,55 @@
     .menu > .cat-title,
     .menu > .cat {
         display: none;
-        width: 12rem;
+        width: 192px;
         margin: 0;
         border-right: 1px solid var(--grey-color);
     }
     .menu > .cat-title {
         display: block;
-        padding: 0.65rem;
+        padding: 10px;
         border: 1px solid var(--grey-color);
-        border-radius: 0.2rem;
+        border-radius: 3px;
         background: white;
         box-shadow: 0 3px 3px -3px rgba(0, 0, 0, 0.5);
         color: var(--celadon-blue);
         font-weight: bold;
-        font-size: 0.875rem;
+        font-size: 14px;
         cursor: pointer;
     }
     .menu > .cat-title::after {
         content: "⬇️";
         float: right;
-        font: bold 1rem;
+        font: bold 16px;
     }
     .menu > .cat:hover {
-        width: calc(960px - 6rem);
+        width: calc(960px - 96px);
         border-right: none;
     }
     
     .cat p {
-        width: 12rem;
+        width: 192px;
         margin: 0;
-        padding: 0.65rem 0.75rem;
+        padding: 10px 12px;
         border: 1px solid transparent;
         border-width: 1px 0;
         background: white;
         position: relative;
         z-index: 10;
-        font-size: 0.875rem;
+        font-size: 14px;
         font-weight: normal;
         cursor: default;
     }
     .cat:last-child p {
-        border-radius: 0 0 0.2rem 0.2rem;
+        border-radius: 0 0 3px 3px;
         color: var(--imperial-red);
     }
     .cat:last-child:hover p {
         border-bottom-color: transparent;
-        border-radius: 0 0 0 0.2rem;
+        border-radius: 0 0 0 3px;
     }
     .cat:hover p {
-        width: calc(12rem + 1px);
+        width: calc(192px + 1px);
         border-color: var(--grey-color);
     }
     .cat:hover div {
@@ -197,24 +194,24 @@
     }
     .cat div {
         display: none;
-        width: calc(960px - 6rem - 12rem);
-        padding: 1rem 1.2rem;
+        width: calc(960px - 96px - 192px);
+        padding: 16px 19px;
         border-left: 1px solid var(--grey-color);
-        border-radius: 0 0.2rem 0.2rem 0;
+        border-radius: 0 3px 3px 0;
         background: white;
         position: absolute;
         top: 0;
         bottom: 0;
-        left: 12rem;
+        left: 192px;
         z-index: 1;
     }
 
     .nav {
         display: flex;
         width: 72%;
-        border-radius: 0.2rem;
+        border-radius: 3px;
         float: right;
-        font-size: 0.875rem;
+        font-size: 14px;
     }
     .nav::after {
         content: "";
@@ -227,7 +224,7 @@
         left: 0;
     }
     .nav a {
-        padding: 0.65rem 0;
+        padding: 10px 0;
         flex: 1;
         text-align: center;
         cursor: pointer;
@@ -236,9 +233,9 @@
     .main {
         display: flex;
         width: 100%;
-        height: 15rem;
-        margin-top: 2rem;
-        padding: 1rem;
+        height: 240px;
+        margin-top: 32px;
+        padding: 16px;
         background: var(--grey-color);
         position: relative;
         z-index: 1;
@@ -251,7 +248,7 @@
         letter-spacing: 1px;
     }
 
-    @media (max-width: 60rem) {
+    @media (max-width: 960px) {
         .nav {
             width: 67%;
         }
