@@ -10,9 +10,9 @@
 
 <style lang="css" scoped>
     .logo {
-        position: absolute;
+        /* position: absolute;
         top: 0;
-        left: 0;
+        left: 0; */
         padding: 16px 24px;
         max-width: 144px;
     }

@@ -53,6 +53,9 @@ export default {
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {},
 
+    transpile: ["three"],
+
+
     // PWA module configuration: https://go.nuxtjs.dev/pwa
     pwa: {
         manifest: {
@@ -61,7 +64,9 @@ export default {
     },
 
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {},
+    build: {
+        transpile: ["three"],
+    },
 
     loading: {
         color: "#1D3557",
