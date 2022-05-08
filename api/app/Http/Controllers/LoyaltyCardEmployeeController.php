@@ -34,7 +34,7 @@ class LoyaltyCardEmployeeController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         $validator = Validator::make($request->all(), [
             'department_id' => 'required|integer',
             'user_id' => 'required|integer|unique:loyalty_card_employees',
@@ -90,7 +90,7 @@ class LoyaltyCardEmployeeController extends Controller
     {
         $isEmployee = LoyaltyCardEmployee::where('id', '=', Auth::user()->id)->first();
         if($isEmployee === null) return $this->respondUnsuccessfully('Unauthorized !');
-        
+
         if($employee->delete()) return $this->respondSuccessfully('LoyaltyCardEmployee destroyed !');
     }
 
@@ -116,6 +116,6 @@ class LoyaltyCardEmployeeController extends Controller
         return response()->json([
             'success' => false,
             'details' => $message,
-        ], 400);
+        ], 200);
     }
 }
