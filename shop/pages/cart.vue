@@ -118,14 +118,14 @@
                 <span>Total price : </span>
                 <span class="total-price">209,99 €</span>  
             </div>
-            <a href="#" class="btn">Order</a>
+            <a href="https://buy.stripe.com/test_8wM28t4ud3W530AeUV" class="btn">Order</a>
         </div>
     </main>
 </template>
 
 <script>
     export default {
-
+       
     }
 </script>
 
