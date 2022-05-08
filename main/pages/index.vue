@@ -213,6 +213,13 @@
         }
         .content-ctnr .left, .content-ctnr .right {
             text-align: center;
-        }       
+        }
+        .advantages {
+            flex-direction: column;
+            justify-content: center;
+        }
+        .advantages .advantage {
+            margin: 16px 0;
+        }  
     }
 </style>

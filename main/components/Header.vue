@@ -2,10 +2,10 @@
     	<header>
 			<LCLogo/>
             <nav>
-                <a href="">Qui sommes-nous ?</a>
-                <a href="">Contact</a>
-                <a href="">Shop</a>
-                <a class="btn" href="">Se connecter</a>
+                <a href="#">Qui sommes-nous ?</a>
+                <a href="#">Contact</a>
+                <a href="https://shop.loyaltycard.tech/">Shop</a>
+                <a class="btn" href="https://auth.loyaltycard.tech/">Se connecter</a>
             </nav>
 		</header>
 </template>
